@@ -355,4 +355,146 @@ print(4>>2) #向右移动2位，相当于除以4
 #  https://user-images.githubusercontent.com/103509367/163407153-b729942c-d2a7-4505-a2ca-2da9d9368171.png
 
 
-# p27写完
+# p28  第四章
+#顺序结构
+'''把大象装冰箱一共分几步'''
+print('------------程序开始------------')
+print('1.把冰箱门打开')
+print('2.把大象放冰箱里')
+print('3.把冰箱门关上')
+print('----------程序结束------------')
+
+#p29
+#测试对象的布尔值
+print('----------以下对象的布尔值均为False-------------------')
+print(bool(False))     #False
+print(bool(0))         #False
+print(bool(0.0))       #False
+print(bool(None))      #False
+print(bool(''))        #False
+print(bool(""))        #False
+print(bool([]))        #空列表
+print(bool(list()))    #空列表
+print(bool(()))        #空元组
+print(bool(tuple()))   #空元组
+print(bool({}))        #空字典
+print(bool(dict()))    #空字典
+print(bool(set()))     #空集合
+
+print('---------其他对象的布尔值均为True------------')
+print(bool(18))
+print(bool(True))
+print(bool('helloworld'))
+
+
+
+#p30
+#单分支结构
+money=1000  #余额
+s=int(input('请输入取款金额'))  #取款金额
+#判断余额是否充足
+if money>=s:
+    money=money-s
+    print('取款成功，余额为：',money)
+
+
+#p31
+#双分支结构if...else,二选一执行
+'''从键盘录入一个整数，编写程序让计算机判断是奇数还是偶数'''
+num=int(input('请输入一个整数'))
+
+#条件判断
+if num%2==0:
+    print(num,'是偶数')
+else:
+    print(num,'是奇数')
+
+
+#p32
+'''多分支结构，多选一执行
+  从键盘录入一个整数  成绩
+  90-100  A
+  80-89   B
+  70-79   C
+  60-69   D
+  0-59    E
+  小于0或者大于100  为非法数据（不是成绩的有效范围'''
+score=int(input('请输入一个成绩：'))
+#判断
+if score>=90 and score<=100:
+    print('A级')
+elif score>=80 and score<=89:
+    print('B级')
+elif score>=70 and score<=79:
+    print('C级')
+elif score>=60 and score<=69:
+    print('D级')
+elif score>=0 and score<=59:
+    print('E级')
+else:
+    print('对不起，成绩有误，不在成绩的有效范围')
+
+#第二种简单的写法
+if 90<=score<=100:
+    print('A级')
+elif 80<=score<=89:
+    print('B级')
+elif 70<=score<=79:
+    print('C级')
+elif 60<=score<=69:
+    print('D级')
+elif 0<=score<=59:
+    print('E级')
+else:
+    print('对不起，成绩有误，不在成绩的有效范围')
+
+
+#p33
+'''会员   >=200   8折
+         >=100   9折
+               不打折
+    非会员   >=200  9.5折
+               不打折'''
+answer=input('您是会员吗？y/n')
+money=float(input('请输入您的购物金额：'))
+#外层判断是否是会员
+if answer=='y':   #会员
+    if money>=200:
+        print('打8折，付款金额为：',money*0.8)
+    elif money>=100:
+        print('打9折，付款金额为：',money*0.9)
+    else:
+        print('不打折，付款金额为：',money)
+else:  #非会员
+    if money>=200:
+        print('打9.5折，付款金额为：',money*0.95)
+    else:
+        print('不打折，付款金额为：',money)
+
+#p34
+#条件表达式
+'''从键盘录入两个整数，比较两个整数的大小'''
+num_a=int(input('请输入第一个整数'))
+num_b=int(input('请输入第二个整数'))
+#比较大小
+'''if num_a>=num_b:
+    print(num_a,'大于等于',num_b)
+else:
+    print(num_a,'小于',num_b)
+'''
+print('使用条件表达式进入比较')
+print(str(num_a)+'大于等于'+str(num_b)  if num_a>=num_b else str(num_a)+'小于'+str(num_b))
+
+#p35
+#pass语句，什么都不做，只是一个占位符，用到需要写语句的地方
+answer=input('您是会员吗？y/n')
+
+#判断是否是会员
+if answer=='y':
+    pass
+else:
+    pass
+
+
+#第四章总结   第四章结束
+#  https://user-images.githubusercontent.com/103509367/163575358-0064c5ed-c5ee-4d50-9778-ad1b31de8ecc.png
